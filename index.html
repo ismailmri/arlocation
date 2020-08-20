@@ -8,10 +8,17 @@
     <script src="hold-drag.js"></script>
     <script src="pinch-scale.js"></script>
     <script src="two-finger-spin.js"></script>
+    <script src="click.js"></script>
 
   </head>
 
   <body>
+    <!-- <script>
+      function discount(min, max) {
+        return Math.floor(Math.random() * (20 - 0) + 0);
+      }
+    </script> -->
+
     <a-scene
       embedded arjs
       gesture-detector
@@ -19,8 +26,8 @@
 
       <!-- We can define assets here to be loaded when A-Frame initializes -->
         <!-- <a-asset-item id="sandCastleModel" src="sand-castle.glb"></a-asset-item> -->
-        <a-text value="15% OFF" scale="2 2 1"></a-text>
-        <a-asset-item id="mcLarenModel" src="./present_v2/scene.gltf"></a-asset-item>
+        <a-text off scale="2 2 1" position="-1.5 1 0" ></a-text>
+        <a-asset-item id="present" src="./present_v2/scene.gltf" cursor="rayOrigin: mouse"></a-asset-item>
 
       <!-- The raycaster will emit mouse events on scene objects specified with the cantap class -->
       <a-camera
@@ -41,7 +48,7 @@
       <a-light type="ambient" intensity="1"></a-light>
 
       <!-- <a-entity gltf-model="#sandCastleModel" class="cantap" hold-drag two-finger-spin pinch-scale scale="0.025 0.025 0.025"></a-entity> -->
-      <a-entity gltf-model="#mcLarenModel" class="cantap" hold-drag two-finger-spin pinch-scale scale="0.25 0.25 0.25"></a-entity>
+      <a-entity gltf-model="#present" model class="cantap" hold-drag two-finger-spin pinch-scale scale="0.25 0.25 0.25"></a-entity>
 
       <a-entity
         id="ground"
