@@ -18,8 +18,9 @@ AFRAME.registerComponent("off", {
     tick: function() {
       let el = this.el;
       if (!this.ready) {
-        el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
-        return;
+          console.log(this.ready);
+          el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
+          return;
       }
     }
 });
