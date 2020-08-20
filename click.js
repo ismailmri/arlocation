@@ -17,10 +17,20 @@ AFRAME.registerComponent("off", {
     },
     tick: function() {
       let el = this.el;
-      if (!this.ready) {
+      if (this.ready === false) {
           console.log(this.ready);
           el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
           return;
       }
     }
 });
+
+// tick: function() {
+//     let el = this.el;
+//     el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF")
+//         if (el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF") > 0) {
+//           return el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
+//         } else {
+//             return el.setAttribute("value", "Sorry, maybe next time.")
+//         }      
+//   }
