@@ -4,17 +4,17 @@ AFRAME.registerComponent('change-color-on-click', {
     init: function () {
     let COLORS = [
     'pink',
-    //'blue',
+    'blue',
     'yellow',
     'red',
     'peachpuff',
     '#2EAFAC',
     '#BAE'];
-    this.el.addEventListener('click', function (evt) {
+    this.el.addEventListener('textfontset', function (evt) {
     let randomIndex = Math.floor(Math.random() * COLORS.length);
     let newColor = COLORS[randomIndex];
     this.setAttribute('color', newColor);
-    console.log('I was clicked at: ', evt.detail.intersection.point, "and my new color is: ", newColor);
+    // console.log('I was clicked at: ', evt.detail.intersection.point, "and my new color is: ", newColor);
     });
     }
     });
@@ -32,31 +32,49 @@ AFRAME.registerComponent("model", {
     }
 });
 
+// AFRAME.registerComponent("off", {
+//     init: function() {
+//       let el = this.el;
+//       this.ready = false;
+//         el.addEventListener("textfontset", function() {
+//         this.ready = true;
+//       }.bind(this));
+//     },
+//     tick: function() {
+//       let el = this.el;
+//       if ( this.ready === false) {
+//         el.setAttribute("value", Math.floor(Math.random() * 15) + "% OFF YOUR ORDER!");
+//         // console.log(el);
+//           console.log(this.ready);
+//           return;
+//       } 
+//     }
+// });
+
+
+
 AFRAME.registerComponent("off", {
     init: function() {
+    
+        let OFFERS = [
+            "You Get FREE Shisha",
+            "Sorry maybe next time.",
+            "A FREE Piece Of Cake",
+            "Sorry maybe next time.",
+            "You Got A FREE Drink",
+            "5% OFF YOUR MEAL!",
+            "Sorry maybe next time.",
+            "Sorry maybe next time.",
+            "You Got A FREE side dish",
+            "Sorry maybe next time.",
+            "FREE Piece Of Cake"
+        ];
       let el = this.el;
-      this.ready = false;
         el.addEventListener("textfontset", function() {
-        this.ready = true;
+            let randomIndex = Math.floor(Math.random() * OFFERS.length);
+            let newOFFER = OFFERS[randomIndex];
+                el.setAttribute("value", newOFFER);
+                  console.log(newOFFER);
       }.bind(this));
     },
-    tick: function() {
-      let el = this.el;
-      if ( this.ready === false) {
-        el.setAttribute("value", Math.floor(Math.random() * 15) + "% OFF YOUR ORDER!");
-        console.log(el);
-          console.log(this.ready);
-          return;
-      } 
-    }
 });
-
-// tick: function() {
-//     let el = this.el;
-//     el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF")
-//         if (el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF") > 0) {
-//           return el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
-//         } else {
-//             return el.setAttribute("value", "Sorry, maybe next time.")
-//         }      
-//   }
