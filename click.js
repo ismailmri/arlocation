@@ -57,17 +57,17 @@ AFRAME.registerComponent("off", {
     init: function() {
     
         let OFFERS = [
-            "You Get FREE Shisha",
+            "You Get FREE Shisha!",
             "Sorry maybe next time.",
-            "A FREE Piece Of Cake",
+            "A FREE Piece Of Cake!",
             "Sorry maybe next time.",
-            "You Got A FREE Drink",
+            "You Got A FREE Drink!",
             "5% OFF YOUR MEAL!",
             "Sorry maybe next time.",
             "Sorry maybe next time.",
-            "You Got A FREE side dish",
+            "You Got A FREE side dish!",
             "Sorry maybe next time.",
-            "FREE Piece Of Cake"
+            "FREE Piece Of Cake!"
         ];
       let el = this.el;
         el.addEventListener("textfontset", function() {
