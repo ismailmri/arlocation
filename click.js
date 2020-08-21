@@ -42,11 +42,12 @@ AFRAME.registerComponent("off", {
     },
     tick: function() {
       let el = this.el;
-      if (this.ready === false) {
+      if ( this.ready === false) {
+        el.setAttribute("value", Math.floor(Math.random() * 15) + "% OFF YOUR ORDER!");
+        console.log(el);
           console.log(this.ready);
-          el.setAttribute("value", "You Got " + Math.floor(Math.random() * 15) + "% OFF");
           return;
-      }
+      } 
     }
 });
 
