@@ -55,6 +55,8 @@ AFRAME.registerComponent("model", {
 
 AFRAME.registerComponent("off", {
     init: function() {
+
+        // setInterval(off, 24*60*60*60);
     
         let OFFERS = [
             "You Get FREE Shisha!",
@@ -67,7 +69,8 @@ AFRAME.registerComponent("off", {
             "Sorry maybe next time.",
             "You Got A FREE side dish!",
             "Sorry maybe next time.",
-            "FREE Piece Of Cake!"
+            "FREE Piece Of Cake!",
+            "Sorry maybe next time."
         ];
       let el = this.el;
         el.addEventListener("textfontset", function() {
